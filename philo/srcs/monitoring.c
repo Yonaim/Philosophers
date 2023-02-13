@@ -6,7 +6,7 @@
 /*   By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:57:10 by yona              #+#    #+#             */
-/*   Updated: 2023/02/12 05:28:35 by yeonhkim         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:26:47 by yeonhkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	watch_infinite_dining_until_end(t_simulation *simul)
 		{
 			printf(STATE_STR_DIED, \
 					elapsed_time(simul->start_time) / 1000, died_philo_id);
+			printf(MAGENTA "A philosopher died during dining.\n" RESET);
 			break ;
 		}
 		print_state_log(&simul->print_queue);
@@ -49,14 +50,14 @@ static void	watch_finite_dining_until_end(t_simulation *simul)
 	{
 		if (is_dining_all_complete(simul))
 		{
-			printf(GREEN "All the philosopher's completed dining.\n" RESET);
+			printf(CYAN "All the philosopher's completed dining.\n" RESET);
 			break ;
 		}
 		if (is_there_a_died_philo(simul, &died_philo_id))
 		{
 			printf(STATE_STR_DIED, \
 					elapsed_time(simul->start_time) / 1000, died_philo_id);
-			printf(RED "A philosopher died during dining.\n" RESET);
+			printf(MAGENTA "A philosopher died during dining.\n" RESET);
 			break ;
 		}
 		print_state_log(&simul->print_queue);
