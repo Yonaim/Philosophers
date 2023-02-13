@@ -6,7 +6,7 @@
 #    By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 02:56:10 by yeonhkim          #+#    #+#              #
-#    Updated: 2023/02/13 19:51:28 by yeonhkim         ###   ########.fr        #
+#    Updated: 2023/02/13 20:10:26 by yeonhkim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ CPPFLAGS		= -I./include
 PHILO			= philo
 PHILO_SRCS		=	\
 					create_threads.c \
-					end_simulation.c \
+					abort_simulation.c \
+					finish_simulation.c \
 					init_simulation.c \
 					main.c \
 					monitoring.c \

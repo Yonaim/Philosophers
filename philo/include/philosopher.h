@@ -6,7 +6,7 @@
 /*   By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 04:46:02 by yeonhkim          #+#    #+#             */
-/*   Updated: 2023/02/12 05:23:45 by yeonhkim         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:09:18 by yeonhkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,8 +141,8 @@ int			create_philo_threads(pthread_t *thds, \
 int			monitoring(t_simulation *simul);
 
 /* end simulation */
-void		end_aborted_simulation(t_simulation *simul, pthread_t *thds);
-void		end_finished_simulation(t_simulation *simul, pthread_t *thds);
+void		abort_simulation(t_simulation *simul, pthread_t *thds);
+void		finish_simulation(t_simulation *simul, pthread_t *thds);
 
 /* behaviors of philosopher */
 void		philo_take_fork_left(t_philosopher *philo);

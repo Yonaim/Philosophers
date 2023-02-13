@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end_simulation.c                                   :+:      :+:    :+:   */
+/*   finish_simulation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 03:10:39 by yeonhkim          #+#    #+#             */
-/*   Updated: 2023/02/12 05:00:24 by yeonhkim         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:07:06 by yeonhkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,7 @@ static void	free_mutexs(t_simulation *simul)
 	pthread_mutex_destroy(&simul->print_queue.lock);
 }
 
-void	end_aborted_simulation(t_simulation *simul, pthread_t *thds)
-{
-	int	i;
-
-	i = 0;
-	while (i < simul->rules.philo_cnt)
-	{
-		pthread_detach(thds[i]);
-		i++;
-	}
-	printf(RED "Simulation aborted due to an error.\n");
-}
-
-void	end_finished_simulation(t_simulation *simul, pthread_t *thds)
+void	finish_simulation(t_simulation *simul, pthread_t *thds)
 {
 	int	i;
 
@@ -72,5 +59,5 @@ void	end_finished_simulation(t_simulation *simul, pthread_t *thds)
 	}
 	free_mutexs(simul);
 	free(thds);
-	printf(GREEN "Simulation ended successfully.\n");
+	printf(GREEN "Simulation ended successfully.\n" RESET);
 }
