@@ -6,15 +6,15 @@
 #    By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 02:56:10 by yeonhkim          #+#    #+#              #
-#    Updated: 2023/02/12 06:03:54 by yeonhkim         ###   ########.fr        #
+#    Updated: 2023/02/13 19:51:28 by yeonhkim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL	= all
 
 CC				= cc
-CFLAGS			= -Wall -Wextra -Werror -fsanitize=address
-# CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
+# CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g3
 CPPFLAGS		= -I./include
 
 # *********************************** PHILO ********************************** #
@@ -32,9 +32,8 @@ PHILO_SRCS		=	\
 					philo_behave.c \
 					philo_routine.c \
 					print.c \
-					queue_operations.c \
+					queue.c \
 					rw_mutexed.c \
-					start_simulation.c \
 					time.c
 
 $(PHILO): $(addprefix ./srcs/, $(PHILO_SRCS:.c=$(SUFFIX).o))
