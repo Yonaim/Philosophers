@@ -6,7 +6,7 @@
 /*   By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 04:42:04 by yeonhkim          #+#    #+#             */
-/*   Updated: 2023/02/12 06:09:03 by yeonhkim         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:41:06 by yeonhkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_print_queue {
 	t_print					data[QUEUE_SIZE];
 	int						front;
 	int						rear;
-	size_t					size;
 	pthread_mutex_t			lock;
 }	t_print_queue;
 
