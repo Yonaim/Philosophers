@@ -6,7 +6,7 @@
 /*   By: yeonhkim <yeonhkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 23:14:23 by yeonhkim          #+#    #+#             */
-/*   Updated: 2023/02/12 02:51:49 by yeonhkim         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:41:43 by yeonhkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ph_usleep(t_micsec micsec)
 	usleep(micsec * 0.9);
 	while (1)
 	{
-		usleep(1);
+		usleep(50);
 		if (current_time() >= end_time)
 			return ;
 	}
